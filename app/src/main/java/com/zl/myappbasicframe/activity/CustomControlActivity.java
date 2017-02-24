@@ -77,6 +77,7 @@ public class CustomControlActivity extends Activity implements View.OnClickListe
                     @Override
                     public void onAnimationUpdate(ValueAnimator animation) {
                         int curValue = (int)animation.getAnimatedValue();
+                        tv.layout(curValue,curValue,curValue+tv.getWidth(),curValue+tv.getHeight());
                         Log.d("qijian","curValue:"+curValue);
                     }
                 });
