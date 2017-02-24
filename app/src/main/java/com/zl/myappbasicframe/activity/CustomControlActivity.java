@@ -54,7 +54,11 @@ public class CustomControlActivity extends Activity implements View.OnClickListe
         scaleAnimation = AnimationUtils.loadAnimation(this, R.anim.scaleanim);
         rotateAnimation = AnimationUtils.loadAnimation(this, R.anim.rotateanim);
         alphaAnimation = new AlphaAnimation(0.8f, 0.2f);
-        translateAnimation = new TranslateAnimation(50, 0, 800, 100);
+        alphaAnimation.setDuration(1000);
+        alphaAnimation.setFillAfter(true);
+        translateAnimation = new TranslateAnimation(0, 0, 100, 800);
+        translateAnimation.setDuration(1000);
+        translateAnimation.setFillAfter(true);
         //动画合集
         setAnimation = AnimationUtils.loadAnimation(this, R.anim.setanim);
 
@@ -97,11 +101,11 @@ public class CustomControlActivity extends Activity implements View.OnClickListe
 
                 break;
             case R.id.alpha:
-                tv.startAnimation(setAnimation);
+                tv.startAnimation(alphaAnimation);
 
                 break;
             case R.id.translate:
-                tv.startAnimation(setAnimation);
+                tv.startAnimation(translateAnimation);
 
                 break;
             default:
