@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">MyAPPBasicFrame</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+
+    <string name="border_top">Border Top</string>
+    <string name="border_bottom">Border Bottom</string>
+    <string name="image_url">Image Url</string>
+    <string name="ju">\ue66b</string>
+    <string name="hua">\ue66a</string>
+    <string name="suan">&#xe669;</string>
+
+
+    <string name="help">权限设置</string>
+    <string name="string_help_text">当前应用缺少必要权限 请点击"设置"-"权限"打开所需权限。最后点击两次后退按钮，即可返回</string>
+    <string name="quit">退出</string>
+    <string name="settings">设置</string>
+
+
+
+
+
+
+
+</resources>
