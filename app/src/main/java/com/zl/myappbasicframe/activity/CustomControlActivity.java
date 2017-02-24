@@ -37,7 +37,7 @@ public class CustomControlActivity extends Activity implements View.OnClickListe
         alpha = (Button) findViewById(R.id.alpha);
         translate = (Button) findViewById(R.id.translate);
         set = (Button) findViewById(R.id.set);
-        valueAnimator = (Button) findViewById(R.id.set);
+        valueAnimator = (Button) findViewById(R.id.valueAnimator);
 
         tv = (TextView) findViewById(R.id.tv);
         tv.setOnClickListener(this);
