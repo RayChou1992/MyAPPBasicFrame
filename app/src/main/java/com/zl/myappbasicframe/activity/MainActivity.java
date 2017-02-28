@@ -14,7 +14,7 @@ import android.view.SurfaceView;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ListView;
+import android.widget.GridView;
 
 import com.zl.myappbasicframe.R;
 import com.zl.myappbasicframe.handle.PhotoHandler;
@@ -24,7 +24,9 @@ import com.zl.myappbasicframe.utils.ToastUtil;
 
 import java.io.IOException;
 
-;import static com.zl.myappbasicframe.application.MyApplication.phoneImei;
+import static com.zl.myappbasicframe.application.MyApplication.phoneImei;
+
+;
 
 public class MainActivity extends BaseActivity implements ActivityCompat.OnRequestPermissionsResultCallback {
 
@@ -37,7 +39,7 @@ public class MainActivity extends BaseActivity implements ActivityCompat.OnReque
 
 
     private String[] menuList;
-    private ListView lv_menu;
+    private GridView gv_menu;
     private Camera camera;
     SensorManager sm;
 
@@ -66,8 +68,8 @@ public class MainActivity extends BaseActivity implements ActivityCompat.OnReque
 
 
         ArrayAdapter adapter = new ArrayAdapter(this, R.layout.item_menu, R.id.tv_menu_name, getMenuList());
-        lv_menu.setAdapter(adapter);
-        lv_menu.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        gv_menu.setAdapter(adapter);
+        gv_menu.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 switch (position) {
@@ -127,6 +129,9 @@ public class MainActivity extends BaseActivity implements ActivityCompat.OnReque
                     case 14:
                         intentJump(MainActivity.this, CustomControlActivity.class);
                         break;
+                    case 15:
+                        intentJump(MainActivity.this, WifiStateFirstActivity.class);
+                        break;
                 }
             }
         });
@@ -139,13 +144,13 @@ public class MainActivity extends BaseActivity implements ActivityCompat.OnReque
                 "CameraDemo", "照片墙", "瀑布流", "EditTextDemo",
                 "加速度感应器", "隐式拍照",
                 "广告轮播", "图标字体",
-                "图片点击", "选座位", "图片坐标系", "自定义view"};
+                "图片点击", "选座位", "图片坐标系", "自定义view","wifi强度"};
 
         return menuList;
     }
 
     private void initView() {
-        lv_menu = (ListView) findViewById(R.id.menu);
+        gv_menu = (GridView) findViewById(R.id.menu);
         camera = openFacingBackCamera();
 
 
