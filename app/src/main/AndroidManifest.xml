@@ -10,6 +10,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
 
 
     <application
@@ -81,7 +82,7 @@
             android:name=".activity.WifiStateFirstActivity"
             android:label="@string/app_name" />
         <activity
-            android:name=".activity.WifiStateSecondActivity"
+            android:name=".activity.TestVPNAcitivity"
             android:label="@string/app_name" />
     </application>
 

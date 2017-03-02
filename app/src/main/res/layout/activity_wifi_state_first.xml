@@ -1,12 +1,55 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/wifi_image"
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:id="@+id/tv1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="145dp"
-        android:layout_gravity="center" />
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/et_juli"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:hint="距离" />
+        <Button
+            android:id="@+id/shuaxin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="刷新" />
+
+
+        <Button
+            android:id="@+id/tijiao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="提交" />
+
+        <Button
+            android:id="@+id/huanhang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="换行" />
+
+    </LinearLayout>
 
 </LinearLayout>
