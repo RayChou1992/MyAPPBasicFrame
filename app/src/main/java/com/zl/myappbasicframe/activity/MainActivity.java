@@ -130,10 +130,19 @@ public class MainActivity extends BaseActivity implements ActivityCompat.OnReque
                         intentJump(MainActivity.this, CustomControlActivity.class);
                         break;
                     case 15:
-                        intentJump(MainActivity.this, WifiStateFirstActivity.class);
+                        intentJump(MainActivity.this, WifiStateThridActivity.class);
                         break;
                     case 16:
                         intentJump(MainActivity.this, TestVPNAcitivity.class);
+                        break;
+                    case 17:
+                        intentJump(MainActivity.this, HorizontalPicker.class);
+                        break;
+                    case 18:
+                        intentJump(MainActivity.this, DataBinderDemo.class);
+                        break;
+                    case 19:
+                        intentJump(MainActivity.this, LongConnDemo.class);
                         break;
                 }
             }
@@ -147,7 +156,7 @@ public class MainActivity extends BaseActivity implements ActivityCompat.OnReque
                 "CameraDemo", "照片墙", "瀑布流", "EditTextDemo",
                 "加速度感应器", "隐式拍照",
                 "广告轮播", "图标字体",
-                "图片点击", "选座位", "图片坐标系", "自定义view","wifi强度","VPN"};
+                "图片点击", "选座位", "图片坐标系", "自定义view","wifi强度","VPN","水平数字选择器","databinding","长连接"};
 
         return menuList;
     }

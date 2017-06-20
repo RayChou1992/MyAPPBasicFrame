@@ -3,10 +3,42 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
 
+        <EditText
+            android:id="@+id/et_juli"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:hint="距离" />
+
+        <Button
+            android:id="@+id/shuaxin"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="刷新" />
+
+
+        <Button
+            android:id="@+id/tijiao"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="提交"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/huanhang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="换行" />
+
+    </LinearLayout>
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -20,36 +52,5 @@
         </LinearLayout>
     </ScrollView>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="horizontal">
-
-        <EditText
-            android:id="@+id/et_juli"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:hint="距离" />
-        <Button
-            android:id="@+id/shuaxin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="刷新" />
-
-
-        <Button
-            android:id="@+id/tijiao"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="提交" />
-
-        <Button
-            android:id="@+id/huanhang"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="换行" />
-
-    </LinearLayout>
 
 </LinearLayout>

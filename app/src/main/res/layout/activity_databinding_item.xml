@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <!--<data>
+        <import type="com.zl.myappbasicframe.beans.WorkLine" />
+        <variable name="workline" type="WorkLine" />
+    </data>-->
+
+    <data>
+
+        <variable
+            name="workline"
+            type="com.zl.myappbasicframe.beans.WorkLine" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/bt_databinding"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@{workline.completed?@color/colorPrimary:@color/colorAccent}"
+            android:text="@{workline.distance}"
+            android:textColor="#ffffff" />
+    </LinearLayout>
+</layout>
+

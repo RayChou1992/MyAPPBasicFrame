@@ -12,7 +12,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.zl.myappbasicframe.R;
-import com.zl.myappbasicframe.utils.ToastUtil;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -43,7 +42,8 @@ public class WifiStateFirstActivity extends Activity {
 
     int column = 0;
     int row = 1;
-    boolean juliIsWrite=false;
+    boolean juliIsWrite = false;
+    int count = 0;
 
 
     @Override
@@ -62,48 +62,52 @@ public class WifiStateFirstActivity extends Activity {
         et_juli = (EditText) findViewById(R.id.et_juli);
 
 
-        huanhang.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                row+=1;
-                column=0;
-                juliIsWrite=false;
-            }
-        });
-        tijao.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String juli = et_juli.getText().toString().trim();
-                if (juli.isEmpty()) {
-                    ToastUtil.ShowMessage(WifiStateFirstActivity.this, "输入距离");
-                } else if (!juliIsWrite){
-                    writeToExcel(juli, 0, row);
-                    column+=1;
-                    juliIsWrite=true;
-                }
-                if (level.isEmpty()) {
-                    ToastUtil.ShowMessage(WifiStateFirstActivity.this, "获取信号强度");
+//        huanhang.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                count = 0;
+//                row += 1;
+//                column = 0;
+//                juliIsWrite = false;
+//            }
+//        });
+//        tijao.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//            }
+//
+//        });
 
-                } else {
-                    writeToExcel(level, column, row);
-                    column += 1;
-                }
-            }
-
-        });
-
-        wifiManager = (WifiManager) getSystemService(WIFI_SERVICE); //获得系统wifi服务
+        wifiManager = (WifiManager) getApplicationContext().getSystemService(WIFI_SERVICE); //获得系统wifi服务
         list = (ArrayList<ScanResult>) wifiManager.getScanResults();
         showWifiList(list);
 
         shuaxin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                count += 1;
                 list.clear();
                 mTv.setText("");
                 wifiManager.startScan();//
                 list = (ArrayList<ScanResult>) wifiManager.getScanResults();
                 showWifiList(list);
+
+//                String juli = et_juli.getText().toString().trim();
+//                if (juli.isEmpty()) {
+//                    ToastUtil.ShowMessage(WifiStateFirstActivity.this, "输入距离");
+//                } else if (!juliIsWrite) {
+//                    writeToExcel(juli, 0, row);
+//                    column += 1;
+//                    juliIsWrite = true;
+//                }
+//                if (level.isEmpty()) {
+//                    ToastUtil.ShowMessage(WifiStateFirstActivity.this, "获取信号强度");
+//
+//                } else {
+//                    writeToExcel(level, column, row);
+//                    column += 1;
+//                }
             }
         });
 
@@ -118,14 +122,18 @@ public class WifiStateFirstActivity extends Activity {
     private void showWifiList(ArrayList<ScanResult> list) {
         for (int i = 0; i < list.size(); i++) {
             String strBssid = list.get(i).BSSID;
-            if ("88:25:93:d2:67:c4".equals(strBssid)) {
-                String strSsid = list.get(i).SSID;
-                String strCapabilities = list.get(i).capabilities;
-                int strLevel = list.get(i).level;
-                mTv.append("\n" + "SSID: " + strSsid + "\n" + "BSSID: " + strBssid + "\n" + "capabilities： "
-                        + strCapabilities + "\n" + "level: " + strLevel + "\n");
-                level = Math.abs(strLevel) + "";
-            }
+            //bc:3a:ea:9d:d5:75
+            //88:25:93:d2:67:c4
+            //00:14:bf:d5:a3:0d
+
+//            if ("00:14:bf:d5:a3:0d".equals(strBssid)) {
+            String strSsid = list.get(i).SSID;
+            String strCapabilities = list.get(i).capabilities;
+            int strLevel = list.get(i).level;
+            mTv.append("\n" + "SSID: " + strSsid + "\n" + "BSSID: " + strBssid + "\n" + "capabilities： "
+                    + strCapabilities + "\n" + "level: " + strLevel + "\n" + "次数" + count);
+            level = Math.abs(strLevel) + "";
+//            }
         }
     }
 

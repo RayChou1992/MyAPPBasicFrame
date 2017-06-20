@@ -1,21 +1,24 @@
 package com.zl.myappbasicframe.activity;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v7.app.AppCompatActivity;
 
 import com.zl.myappbasicframe.R;
 import com.zl.myappbasicframe.application.MyApplication;
 import com.zl.myappbasicframe.utils.ActivityCollector;
 
-public abstract class BaseActivity extends Activity {
+public abstract class BaseActivity extends AppCompatActivity {
     /**
      * 请求列表管理器
      */
     protected Handler handler = null;
+    protected Context context=null;
 
-    @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
