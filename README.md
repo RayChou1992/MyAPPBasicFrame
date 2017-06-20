@@ -1,3 +1,5 @@
 # MyAPPBasicFrame
-平时的学习
+  此乃本人平日学习的一些demo集合。
+  
 # 2017-6-20 新增，Android长连接Mina，实现一个消息发送功能。
+  
